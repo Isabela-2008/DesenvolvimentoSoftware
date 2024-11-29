@@ -1,0 +1,57 @@
+Enunciado
+Projeto: Sistema de Gestão de Desenvolvimento de Software
+
+Este projeto visa criar um sistema de gestão para o desenvolvimento de softwares, abrangendo o registro e a administração de funcionários, projetos, tarefas e alocações de trabalho. O banco de dados foi projetado para facilitar o acompanhamento do progresso dos projetos e a alocação eficiente de recursos humanos.
+
+README.md
+markdown
+# Sistema de Gestão de Desenvolvimento de Software  
+
+## Descrição  
+Este projeto implementa um sistema de gestão para equipes de desenvolvimento de software, permitindo o registro de funcionários, gerenciamento de projetos, controle de tarefas e alocação de horas trabalhadas. O banco de dados relacional é ideal para acompanhar o progresso das atividades e a alocação de recursos.  
+
+## Estrutura do Banco de Dados  
+O banco de dados `DesenvolvimentoSoftware` contém as seguintes tabelas:  
+
+1. **funcioanrios**  
+   - `funcionario_id`: Identificador único do funcionário (chave primária)  
+   - `nome`: Nome do funcionário  
+   - `cargo`: Cargo do funcionário  
+   - `salario`: Salário do funcionário  
+
+2. **projetos**  
+   - `projeto_id`: Identificador único do projeto (chave primária)  
+   - `nome_projeto`: Nome do projeto  
+   - `id_gerente`: Identificador do gerente do projeto (não implementado diretamente)  
+
+3. **tarefas**  
+   - `tarefa_id`: Identificador único da tarefa (chave primária)  
+   - `id_projeto`: Identificador do projeto (chave estrangeira)  
+   - `descricao`: Descrição da tarefa  
+   - `situacao`: Situação da tarefa (concluída ou não concluída)  
+
+4. **alocacao**  
+   - `alocacao_id`: Identificador único da alocação (chave primária)  
+   - `id_funcionario`: Identificador do funcionário (chave estrangeira)  
+   - `id_tarefa`: Identificador da tarefa (chave estrangeira)  
+   - `horas_trabalhadas`: Horas trabalhadas na tarefa  
+
+## Instruções de Uso  
+1. **Configuração do Banco de Dados**  
+   - Certifique-se de ter um servidor MySQL em execução.  
+   - Execute os scripts SQL fornecidos para criar o banco de dados e as tabelas.  
+
+2. **Inserção de Dados**  
+   - Os dados de exemplo para funcionários, projetos, tarefas e alocação já estão incluídos no script. Você pode modificar ou expandir conforme necessário.  
+
+3. **Consultas e Manipulação de Dados**  
+   - Utilize comandos SQL para consultar e manipular os dados conforme suas necessidades.  
+
+## Tecnologias Utilizadas  
+- MySQL  
+
+## Contribuição  
+Contribuições são bem-vindas! Sinta-se à vontade para abrir issues e pull requests.  
+
+## Licença  
+Este projeto é de código aberto e está licenciado sob a [MIT License](LICENSE).  
