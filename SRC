@@ -1,0 +1,91 @@
+create database DesenvolvimentoSoftware;
+use DesenvolvimentoSoftware;
+
+create table funcioanrios (
+funcionario_id int auto_increment primary key,
+nome varchar(100),
+cargo varchar(100),
+salario decimal(10,2)
+);
+
+create table if not exists projetos (
+projeto_id int auto_increment primary key,
+nome_projeto varchar(100),
+id_gerente int
+);
+
+create table if not exists tarefas (
+tarefa_id int auto_increment primary key,
+id_projeto int,
+descricao varchar(100),
+situacao enum("concluida","não concluida"),
+foreign key(id_projeto) references projetos (projeto_id) 
+);
+
+
+create table if not exists alocacao (
+alocacao_id int auto_increment primary key,
+id_funcionario int,
+id_tarefa int,
+horas_trabalhadas varchar (200),
+foreign key (id_funcionario) references funcioanrios(funcionario_id),
+foreign key (id_tarefa) references tarefas(tarefa_id)
+);
+
+insert into funcioanrios(nome, cargo, salario) values 
+("Isabela","Desenvolvedor de software",3000),
+("Cintya","Designer",3000),
+("Danyele","Ciencia de dados",3000),
+("Miakelly","Seguranca da informacao",3500),
+("Mikael","Especialista em computacao",3000),
+("Gerson","Analista de negocios",2700),
+("Bruno","Desenvolvedor fullstack",3000),
+("Marcelo","Analista de suporte",2500),
+("Arthur","Ciencia de dados",3000),
+("jaydson","Sistema da informacao",3000);
+
+insert into projetos(nome_projeto) values
+("clínica médica"),
+(" loja de eletrônicos"),
+("escola"),
+("restaurante"),
+("academia");
+
+insert into tarefas (descricao, situacao) values 
+("A","concluida"),
+("B","concluida"),
+("C","nao concluida"),
+("D","concluida"),
+("E","nao concluida"),
+("F","nao concluida"),
+("G","concluida"),
+("H","concluida"),
+("I","nao concluida"),
+("J","concluida"),
+("K","concluida"),
+("L","nao concluida"),
+("M","concluida"),
+("N","concluida"),
+("O","concluida"),
+("P","nao concluida"),
+("Q","nao concluida"),
+("R","concluida"),
+("S","nao concluida"),
+("T","nao concluida");
+
+insert into alocacao (horas_trabalhadas) values 
+("oito horas"),
+("sete horas"),
+("oito horas "),
+("oito horas"),
+("oito horas"),
+("dez horas"),
+("oito horas"),
+("doze horas"),
+("cinco horas"),
+("oito horas"),
+("dez horas"),
+("oito horas"),
+("nove horas"),
+("doze horas"),
+("cinco horas");
